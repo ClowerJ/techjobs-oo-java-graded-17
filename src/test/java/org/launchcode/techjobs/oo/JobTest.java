@@ -70,11 +70,11 @@ public class JobTest {
 
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
-        Job test3 = new Job("Product tester",
-                new Employer("ACME"),
-                new Location("Desert"),
-                new PositionType("Quality control"),
-                new CoreCompetency("Persistence"));
+        Job test3 = new Job("Web Developer",
+                new Employer("LaunchCode"),
+                new Location("StL"),
+                new PositionType("Back-end developer"),
+                new CoreCompetency("Java"));
 
         assertEquals('\n',test3.toString().charAt(0));
         assertEquals('\n', test3.toString().charAt(test3.toString().length() - 1));
