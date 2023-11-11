@@ -5,7 +5,6 @@ import mockit.Mocked;
 import mockit.Tested;
 import org.junit.Assert;
 import org.junit.Test;
-import org.launchcode.techjobs.oo.test.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -18,7 +17,7 @@ import static org.junit.Assert.*;
 public class TestTaskFour extends AbstractTest {
 
     @Tested
-    org.launchcode.techjobs.oo.test.JobTest jobTest;
+    JobTest jobTest;
     @Mocked
     Job job;
     @Mocked
