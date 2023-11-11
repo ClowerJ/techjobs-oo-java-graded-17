@@ -56,26 +56,16 @@ public class JobTest {
                 "\nCore Competency: Persistence\n";
 
         assertEquals(expected, job.toString());
+
     }
 
 
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
-        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job testJob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals('\n',testJob3.toString().charAt(0));
+        assertEquals('\n', testJob3.toString().charAt(testJob3.toString().length() - 1));
 
-        String jobToString = job.toString();
-
-        assertTrue(jobToString.startsWith("\n"));
-        assertTrue(jobToString.endsWith("\n"));
-
-
-        String expected = "ID: " + job.getId() +
-                "\nName: Product tester" +
-                "\nEmployer: ACME" +
-                "\nLocation: Desert" +
-                "\nPosition Type: Quality control" +
-                "\nCore Competency: Persistence" + "\n";
-        assertEquals(expected, jobToString.trim());
     }
 
     @Test
@@ -91,19 +81,10 @@ public class JobTest {
                         "\n";
         assertEquals(expectedString, job.toString());
     }
-
-    @Test
+@Test
     public void testToStringHandlesEmptyField() {
-        Job job = new Job();
-        String expectedString =
-                "\nID: " + job.getId() +
-                        "\nName: Data not available" +
-                        "\nEmployer: Data not available" +
-                        "\nLocation: Data not available" +
-                        "\nPosition Type: Data not available" +
-                        "\nCore Competency: Data not available" +
-                        "\n";
-        assertEquals(expectedString, job.toString());
+        Job testJob5 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+        assertEquals("\nID: " + testJob5.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Data not available\n" , testJob5.toString());
 
 
     }
